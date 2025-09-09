@@ -10,12 +10,12 @@ config="${GRADLE_USER_HOME}/gradle.properties"
 while true; do
 
     set -x
-    gradle --stop
+    ./gradlew --stop
     rm -rf "${GRADLE_USER_HOME}"
     mkdir -p "${GRADLE_USER_HOME}"
     echo "org.gradle.daemon=false" >>"${config}"
 
-    gradle --stacktrace -i :projec-a:check >./build.log
+    ./gradlew --stacktrace -i :projec-a:check >./build.log
     gradle_code=$?
 
     set +x

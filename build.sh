@@ -10,7 +10,6 @@ config="${GRADLE_USER_HOME}/gradle.properties"
 while true; do
 
     set -x
-    ./gradlew --stop
     rm -rf "${GRADLE_USER_HOME}"
     mkdir -p "${GRADLE_USER_HOME}"
     echo "org.gradle.daemon=false" >>"${config}"
